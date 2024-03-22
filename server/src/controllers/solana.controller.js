@@ -7,7 +7,6 @@ const SESSION_HASH = 'QNDEMO' + Math.ceil(Math.random() * 1e9); // Random unique
 let credits = 0;
 
 const raydium = new PublicKey(RAYDIUM_PUBLIC_KEY);
-const mintAddress = new PublicKey("4CJtTV5ZB5xtqWrrW68xkRsJdE7JyabQBZCrC3m2a2UH");
 // Replace HTTP_URL & WSS_URL with QuickNode HTTPS and WSS Solana Mainnet endpoint
 const connection = new Connection(`https://ultra-cold-sea.solana-mainnet.quiknode.pro/84fe7155a001bd60d7d9989162030818eb9775c1/`, {
     wsEndpoint: `wss://ultra-cold-sea.solana-mainnet.quiknode.pro/84fe7155a001bd60d7d9989162030818eb9775c1/`,
@@ -41,7 +40,6 @@ async function fetchRaydiumAccounts(txId, connection) {
             maxSupportedTransactionVersion: 0,
             commitment: 'confirmed'
         });
-
     
     credits += 100;
     
@@ -59,12 +57,6 @@ async function fetchRaydiumAccounts(txId, connection) {
     const tokenAAccount = accounts[tokenAIndex];
     const tokenBAccount = accounts[tokenBIndex];
 
-  try {
-    const accountInfo = await connection.getAccountInfo(tokenAAccount.toBase58());
-    console.log('getAccountInfo------------------------------', accountInfo);
-    } catch (error) {
-        console.error('Failed to fetch account info:', error);
-    }
 
     const displayData = [
         { "Token": "A", "tokenA": tokenAAccount.toBase58() },
@@ -101,12 +93,7 @@ wss.on('connection', function connection(ws) {
   });
 });
 
-async function fetchMetadata(connection, mintAddress) {
-    // Assuming `findMetadataAccount` is the method to find the metadata account for a mint
-    const [metadataAccount] = await Metadata.findMetadataAccount(mintAddress);
-    const metadata = await Metadata.load(connection, metadataAccount);
-    return metadata.data;
-}
+
 // Usage
 //const connection = new Connection("https://api.mainnet-beta.solana.com/");
 
