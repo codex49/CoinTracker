@@ -1,0 +1,106 @@
+{
+  "name": "cointracker",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@metaplex-foundation/mpl-token-metadata": "^3.2.1",
+    "@solana/web3.js": "^1.91.1",
+    "axios": "^1.6.8",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "binance-api-node": "^0.7.3",
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "death": "^1.1.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "https": "^1.0.0",
+    "kucoin-api-node": "^0.0.2",
+    "kucoin-node-api": "^2.1.5",
+    "kucoin-node-sdk": "^1.0.5",
+    "kucoin-websockets": "^0.1.7",
+    "log4js": "^2.5.3",
+    "mexc-api-sdk": "^1.0.3",
+    "moment": "^2.21.0",
+    "mongoose": "^8.0.3",
+    "monk": "^7.3.4",
+    "morgan": "^1.9.0",
+    "node-api-kucoin": "^0.1.10",
+    "node-fetch": "^2.7.0",
+    "node-telegram-bot-api": "^0.30.0",
+    "pug": "^2.0.0-beta11",
+    "puppeteer": "^22.2.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "rimraf": "^2.6.2",
+    "socket.io": "^4.7.2",
+    "twit": "^2.2.11",
+    "twitter": "^1.7.1",
+    "twitter-api-v2": "^1.16.1",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.3",
+    "babel-jest": "^21.2.0",
+    "babel-register": "^6.26.0",
+    "dotenv": "^4.0.0",
+    "eslint": "^4.12.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.3.2",
+    "eslint-watch": "^3.1.3",
+    "jest": "^21.2.1",
+    "mkdirp": "^3.0.1",
+    "nodemon": "^1.12.1",
+    "supertest": "^3.0.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-class-properties"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "import",
+      "jest"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "jest/no-focused-tests": 2,
+      "jest/no-identical-title": 2
+    }
+  }
+}

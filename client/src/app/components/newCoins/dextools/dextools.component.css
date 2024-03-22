@@ -1,0 +1,7 @@
+.link-color {
+    color: #fff;
+
+    &:visited {
+        color: #949191;
+    }
+}

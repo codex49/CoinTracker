@@ -1,0 +1,9 @@
+<div *ngIf="tokens.length">
+    <h2>New Tokens</h2>
+    <ul>
+      <li *ngFor="let token of tokens">
+        <a href="https://dexscreener.com/solana/{{token}}" target="_blank">{{token}}</a> &nbsp;
+        <a href="https://solscan.io/token/{{token}}" target="_blank">Solscan</a>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,31 @@
+<mat-toolbar color="indigo">
+    <span>CoinTracker</span>
+    
+    <!-- Spacer to push items to the right -->
+    <span class="spacer"></span>
+
+    <!-- Navigation items -->
+    <!-- <button mat-button [routerLink]="['/pump']">Pumb</button> -->
+    <button mat-button [matMenuTriggerFor]="trackNewCoin">Track</button>
+    <mat-menu #trackNewCoin="matMenu">
+      <button mat-menu-item [routerLink]="['/new/raydium']">raydium</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="newCoin">New</button>
+    <mat-menu #newCoin="matMenu">
+      <button mat-menu-item [routerLink]="['/new/dextools']">DexTools</button>
+      <button mat-menu-item [routerLink]="['/new/airdrop']">Airdrop</button>
+      <button mat-menu-item [routerLink]="['/new/ico']">ICO</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="pumpMenu">Pump</button>
+    <mat-menu #pumpMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/pump/binance']">Binance</button>
+      <button mat-menu-item [routerLink]="['/pump/kucoin']">Kucoin</button>
+      <button mat-menu-item [routerLink]="['/pump/mexs']">Mexs</button>
+    </mat-menu>
+    <button mat-button [routerLink]="['/users']">Users</button>
+    <button mat-button [routerLink]="['/coins']">Coins</button>
+    <button mat-button [routerLink]="['/portfolio']">Portfolio</button>
+    <button mat-button [routerLink]="['/transactions']">Transactions</button>
+
+    <!-- Add more toolbar items here -->
+</mat-toolbar>
